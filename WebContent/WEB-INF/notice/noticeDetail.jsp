@@ -45,6 +45,8 @@
 		    </tr>
 		  </tbody>
 		</table>
+		<a href="${path1 }/GetNoticeListCtrl.do" class="button is-primary">글 수정</a>
+		<a href="${path1 }/GetNoticeListCtrl.do" class="button is-primary">글 삭제</a>
 		<a href="${path1 }/GetNoticeListCtrl.do" class="button is-primary">목록</a>
     </div>
   </section>

@@ -17,8 +17,13 @@
   <body>
   <jsp:include page="/header.jsp" />
   <section class="section">
+  <div class="columns is-full">
+  <c:if test='${sid.equals("admin")}'>
+	<jsp:include page="../../admin/sidebar.jsp" />
+		</c:if>
     <div class="container">
       <h1 class="title">공지사항 목록</h1>
+      <jsp:include page="/head.jsp" />
 		<table class="table">
 		  <thead>
 		    <tr>
@@ -44,9 +49,12 @@
 		    </c:if> --%>
 		  </tbody>
 		</table>
+		<c:if test='${sid.equals("admin")}'>
 		<div class="buttons">
 		  <a href="${path1 }/notice/addNotice.jsp" class="button is-primary">글 등록</a>
 		</div>
+		</c:if>
+    </div>
     </div>
   </section>
   <jsp:include page="/footer.jsp"></jsp:include>

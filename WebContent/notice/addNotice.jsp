@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   </head>
   <body>
-  <jsp:include page="../header.jsp" />
+  <jsp:include page="/header.jsp" />
   <section class="section">
     <div class="container">
       <h1 class="title">글 등록하기</h1>
@@ -33,13 +33,13 @@
 			  </tbody>
 			</table>
 			<div class="buttons">
-			  <button type="submit" class="button is-success">등록</button>
-			  <button type="reset" class="button is-warning">취소</button>
-			  <a href="${path1 }/GetNoticeListCtrl.do" class="button is-info">목록</a>
+			  <button type="submit" class="button is-primary">등록</button>
+			  <button type="reset" class="button is-primary">취소</button>
+			  <a href="${path1 }/GetNoticeListCtrl.do" class="button is-primary">목록</a>
 			</div>
 		</form>
     </div>
   </section>
-  <jsp:include page="../footer.jsp"></jsp:include>
+  <jsp:include page="/footer.jsp"></jsp:include>
   </body>
 </html>
