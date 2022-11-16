@@ -24,7 +24,6 @@ public class UserInfoCtrl extends HttpServlet {
 		UserDAO dao = new UserDAO();
 		UserDTO dto = dao.userInfo(id);
 		
-		//dao로 부터 받은 데이터를 view에 디스패치함
 		request.setAttribute("dto", dto);
 		
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/user/userUpdate.jsp");

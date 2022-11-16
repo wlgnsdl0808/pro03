@@ -14,14 +14,15 @@ public class UserDAO {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	String key = "%02x";
-	public int idCheckPro(String id){	//중복 아이디 체크 / 회원가입시 가입전 체크
+	public int idCheckPro(String id){
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
 			pstmt = con.prepareStatement(Maria.USER_ID_CHECK);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			if(rs.next()){ cnt = cnt + 1;	} else { cnt = 0;	}
+			if(rs.next()){ cnt = cnt + 1;	} 
+			else { cnt = 0;	}
 		} catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
 		} catch(Exception e){
@@ -37,9 +38,7 @@ public class UserDAO {
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
-			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.USER_JOIN);
-			//id, pw, name, birth, email, tel, address
 			pstmt.setString(1, user.getId());
 			pstmt.setString(2, user.getPw());
 			pstmt.setString(3, user.getName());
@@ -69,7 +68,6 @@ public class UserDAO {
 		
 		try {
 			con = Maria.getConnection();
-			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.VISIT_UPDATE);
 			pstmt.setString(1, id);
 			pstmt.executeUpdate();
@@ -108,7 +106,6 @@ public class UserDAO {
 		UserDTO dto = new UserDTO();
 		try {
 			con = Maria.getConnection();
-			//읽은 횟수 증가
 			pstmt = con.prepareStatement(Maria.USER_ID_CHECK);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -138,22 +135,21 @@ public class UserDAO {
 		}
 		return dto;
 	}
-
 	//회원정보 변경
 	public int updateUser(UserDTO user) {
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
-			//읽은 횟수 증가
+			
 			pstmt = con.prepareStatement(Maria.USER_UPDATE);
-			//id, pw, name, birth, email, tel, address
-			pstmt.setString(1, user.getPw());
-			pstmt.setString(2, user.getName());
-			pstmt.setString(3, user.getBirth());
-			pstmt.setString(4, user.getEmail());
-			pstmt.setString(5, user.getTel());
-			pstmt.setString(6, user.getAddr());
-			pstmt.setString(7, user.getId());
+			pstmt.setString(1, user.getId());
+			pstmt.setString(2, user.getPw());
+			pstmt.setString(3, user.getName());
+			pstmt.setString(4, user.getBirth());
+			pstmt.setString(5, user.getEmail());
+			pstmt.setString(6, user.getTel());
+			pstmt.setString(7, user.getAddr());
+
 			cnt = pstmt.executeUpdate();
 		} catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
@@ -168,7 +164,6 @@ public class UserDAO {
 		}
 		return cnt;
 	}
-
 	//회원목록
 	public ArrayList<UserDTO> getUserList() {
 		ArrayList<UserDTO> userList = new ArrayList<UserDTO>();

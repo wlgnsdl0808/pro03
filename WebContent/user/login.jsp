@@ -15,6 +15,7 @@
 <jsp:include page="/head.jsp" />
 <style>
 .title { padding-top:36px; padding-bottom:20px; }
+.frm1 { border:2px solid #333; padding: 24px; width: 1000px; margin:50px auto; }
 </style>
 </head>
 <body>
@@ -22,7 +23,7 @@
   <section class="section">
     <div class="container">
 	<h2 class="title">로그인</h2>
-	<form name="frm1" id="frm1" action="${path1 }/UserLoginCtrl.do" method="post" onsubmit="return joinCheck(this)">
+	<form name="frm1" id="frm1" action="${path1 }/UserLoginCtrl.do" method="post" onsubmit="return joinCheck(this)" class="frm1">
 		<table class="table">
 			<tbody>
 				<tr>

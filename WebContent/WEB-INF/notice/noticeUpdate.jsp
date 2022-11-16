@@ -11,46 +11,39 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>공지사항 상세보기</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>공지사항 수정하기</title>
+    <jsp:include page="/head.jsp" />
   </head>
   <body>
   <jsp:include page="/header.jsp" />
   <section class="section">
     <div class="container">
-      <h1 class="title">공지사항 상세보기</h1>
-      <jsp:include page="/head.jsp" />
+      <h1 class="title">공지사항 수정하기</h1>
+      <form action="ModifyNoticeProCtrl.do" method="post">
 		<table class="table">
 		   <tbody>
 		    <tr>
 		      <th>번호</th>
-		      <td>${dto.no }</td>
+		      <td>
+		      	<input type="text" name="no" id="no" value="${dto.no }" readonly />
+		      </td>
 		    </tr>
 		    <tr>
 		      <th>제목</th>
-		      <td>${dto.title }</td>
+		      <td><input type="text" class="input" maxlength="120" name="title" id="title" placeholder="제목 입력" value="${dto.title }" required /></td>
 		    </tr>
 		    <tr>
 		      <th>내용</th>
-		      <td><p>${dto.content }</p></td>
-		    </tr>
-		    <tr> 
-		      <th>작성일</th>
-		      <td>
-		      	<fmt:parseDate value="${dto.regDate }" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
-		      	<fmt:formatDate value="${regdate }" pattern="yyyy-MM-dd" />
-		    </tr>
-		    <tr>
-		      <th>읽은 횟수</th>
-		      <td><p>${dto.visited }</p></td>
+		      <td><textarea rows="8" cols="100" name="content" id="content" class="textarea" required>${dto.content }</textarea></td>
 		    </tr>
 		  </tbody>
 		</table>
-		<c:if test='${sid.equals("admin")}'>
-		<a href="${path1 }/ModifyNoticeCtrl.do?no=${dto.no }" class="button is-primary">글 수정</a>
-		<a href="${path1 }/DelNoticeCtrl.do?no=${dto.no }" class="button is-primary">글 삭제</a>
-		</c:if>
-		<a href="${path1 }/GetNoticeListCtrl.do" class="button is-primary">목록</a>
+		<div class="buttons">
+		  <button type="submit" class="button is-primary">글 수정</button>
+		  <button type="reset" class="button is-primary">취소</button>
+		  <a href="${path1 }/GetNoticeListCtrl.do" class="button is-primary">목록</a>
+		</div>
+	  </form>
     </div>
   </section>
   <jsp:include page="/footer.jsp"></jsp:include>
