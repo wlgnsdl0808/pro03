@@ -46,8 +46,10 @@ public class TestDAO {
 			pstmt = con.prepareStatement(Maria.TEST_SELECT_ALL);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
+				TestDTO dto = new TestDTO();
 				dto.setName(rs.getString("name"));
 				dto.setPoint(rs.getInt("point"));
+				list.add(dto);
 
 			}
 		} catch(ClassNotFoundException e){
@@ -61,6 +63,6 @@ public class TestDAO {
 		} finally {
 			Maria.close(rs, pstmt, con);
 		}
-		return dto;
+		return list;
 	}
 }
