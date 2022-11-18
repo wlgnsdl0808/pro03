@@ -30,3 +30,24 @@ create table USER(
 insert into user values ("admin","1234","관리자","ㅁㄴㅇ","010-1004-1004",now(),0,0,0);
 
 select * from user;
+
+UPDATE user SET grade="A" WHERE id="admin";
+
+CREATE TABLE pic(
+	no INT PRIMARY KEY AUTO_INCREMENT,
+	tourno VARCHAR(20),
+	picname VARCHAR(150)
+);
+
+ALTER TABLE pic ADD COLUMN pos INT default 1; 
+
+CREATE TABLE tour(
+	no INT PRIMARY KEY AUTO_INCREMENT,
+	tourno VARCHAR(20),	-- 카테고리 타입 - 마지막 레코드의 no+1
+	cate VARCHAR(20),
+	place VARCHAR(100),
+	comment1 VARCHAR(1000),
+	comment2 VARCHAR(1000)
+);
+
+ALTER TABLE tour ADD COLUMN addr VARCHAR(200);

@@ -17,7 +17,6 @@
 </head>
 <body>
   	<jsp:include page="${path1 }/header.jsp" />
-	<h2>${user}님의 테스트 입니다.</h2>
 	<jsp:include page="${path1 }/visual.jsp" />
 	<jsp:include page="${path1 }/footer.jsp" />
 </body>

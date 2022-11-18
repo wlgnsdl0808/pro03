@@ -6,6 +6,8 @@
 <%@ page import="java.text.*, java.net.InetAddress" %>
 <c:set var="path0" value="<%=request.getContextPath() %>" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 .table { min-width:960px; }
 #visuall { display:block; background-image:url("${path0 }/data/visual/visual_img1.jpg");

@@ -73,16 +73,16 @@
 					  <label class="label">이미지 추가</label>
 					  <div class="control">
 						<input type="hidden" name="pic_ck1" id="pic_ck1" value="no"/>
-						<button type="button" class="button is-link" onclick="imgUpload(1)">이미지 추가</button>
+						<button type="button" class="button is-primary" onclick="imgUpload(1)">이미지 추가</button>
 					  </div>
 					</div>
 									
 					<div class="field is-grouped">
 					  <div class="control">
-					    <button type="submit" class="button is-link">장소 등록</button>
+					    <button type="submit" class="button is-primary">장소 등록</button>
 					  </div>
 					  <div class="control">
-					    <button type="reset" class="button is-link is-light">취소</button>
+					    <button type="reset" class="button is-primary">취소</button>
 					  </div>
 					</div>
 				</form>
